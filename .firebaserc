@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webfejl-2024-df45f": {
+      "hosting": {
+        "week-04": [
+          "webfejl-2024-df45f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webfejl-2024-df45f"
+  }
+}

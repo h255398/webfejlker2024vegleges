@@ -1,0 +1,36 @@
+<div class="main_component">
+    <div class="div-flex">
+        <h1>Regisztráció</h1>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-label for="email">Email: </mat-label>
+                <input matInput type="text" formControlName="email" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="password">Jelszó: </mat-label>
+                <input matInput type="password" formControlName="password" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="nev">Név: </mat-label>
+                <input matInput type="text" formControlName="nev" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="kg">Aktuális súly:</mat-label>
+                <input matInput type="number" formControlName="kg"/>
+            </mat-form-field>
+            
+            
+            <div>
+                <span class="buttons">
+                    <button mat-raised-button color="primary" type="submit">Regisztráció</button>
+                </span>
+                <span class="loading-indicator" *ngIf="submitting">
+                    <mat-progress-bar mode="query"></mat-progress-bar>
+                </span>
+                <span class="buttons">
+                    <button mat-raised-button color="primary" (click)="goBack()">Vissza</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

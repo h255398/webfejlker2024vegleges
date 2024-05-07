@@ -1,0 +1,51 @@
+<div>
+  <h1>Profilod:</h1>
+  <table>
+    <tr>
+      <td>Neved:</td>
+      <td>{{profil?.nev | uppercase}} </td>
+
+
+    </tr>
+    <tr>
+      <td>Email címed:</td>
+      <td>{{profil?.email}}</td>
+
+
+    </tr>
+
+  </table>
+
+  <h2>Testsúly monitorozás:</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>Feljegyzés száma</th>
+      <th>Akkori tömeg</th>
+      <th>Törlés</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let kg of profil?.kg; let i = index"
+        [ngStyle]="{'background-color' : i % 2 === 0 ? 'lightgray' : 'white'}">
+      <td>{{i + 1}}</td>
+      <td>{{kg}}</td>
+
+      <td>
+        <button (click)="deleteWeight(i)">Törlés</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h2>Új tömeg felvétele:</h2>
+  <form [formGroup]="addKgForm" (ngSubmit)="addWeight()">
+    <label>
+      Új tömeg:
+      <input type="number" name="kg" formControlName="newWeight">
+    </label>
+    <button type="submit" [disabled]="addKgForm.invalid">Hozzáadás</button>
+  </form>
+
+</div>
